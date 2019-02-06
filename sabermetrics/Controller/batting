@@ -1,0 +1,43 @@
+<?php
+
+$plateapp=0;
+$hits = 0;
+$singles = 0;
+$triples = 0;
+$atbats=0;
+$strikeOs=0;
+$walks=0;
+$homeruns=0;
+$hbp=0;
+$sacfly=0;
+$totalbases=0;
+//Total Bases = (singles + [2 * Doubles] + [3 * Triples] + [4 * Home Runs])
+
+//Formula for Batting Average
+$batting_avg = $hits/$atbats;
+
+//Formula for Base on Balls Percentage
+$baseonballs = $walks/$plateapp;
+
+//Formula for HR Ratio 
+$HRratio = $homerun/$atbats;
+
+//Isolated Power Formula
+$ISOpower = ($totalbases-$hits)/$atbats;
+
+//Formula for On Base Percentage 
+$onbasepercent = (($hits+$walks+$hbp)/($atbats+$walks+$hbp+$sacflys));
+
+//Formula for Slugging Percentage
+$slugavg = ($singles + (2*$doubles)+(3*$triple)+(4*$homeruns));
+
+//On Base Plus Slugging
+$obps = $onbasepercent+$slugavg;
+
+//Runs Created
+$runscreated = $onbasepercent * $totalbases;
+
+//Strikeout Ratio
+$SOratio = $strikeOs/$atbats;
+
+?>
